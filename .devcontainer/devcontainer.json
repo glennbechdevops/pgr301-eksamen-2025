@@ -1,5 +1,5 @@
 {
-  "name": "AWS SAM + Java 12",
+  "name": "AWS SAM + Java 21",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -7,16 +7,14 @@
       "username": "vscode"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/aws-cli:1": {
-      "version": "latest"
-    },
+    "ghcr.io/devcontainers/features/aws-cli:1": { "version": "latest" },
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "12",
+      "version": "21",
       "installMaven": "true"
     }
   },
-  "postCreateCommand": "python3 -m pip install --upgrade pip pipx && pipx install aws-sam-cli && aws --version && sam --version && java -version && mvn -v && docker --version",
   "remoteUser": "vscode",
+  "postCreateCommand": "python3 -m pip install --upgrade pip pipx && pipx install aws-sam-cli && echo 'export PATH=$PATH:/home/vscode/.local/bin' >> /home/vscode/.bashrc && echo 'export PATH=$PATH:/home/vscode/.local/bin' >> /home/vscode/.zshrc && aws --version && sam --version && java -version && mvn -v && docker --version",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -28,11 +26,15 @@
       "settings": {
         "java.configuration.runtimes": [
           {
-            "name": "JavaSE-12",
-            "path": "/usr/lib/jvm/msopenjdk-12"
+            "name": "JavaSE-21",
+            "path": "/usr/lib/jvm/msopenjdk-21",
+            "default": true
           }
         ]
       }
     }
+  },
+  "containerEnv": {
+    "JAVA_HOME": "/usr/lib/jvm/msopenjdk-21"
   }
 }
