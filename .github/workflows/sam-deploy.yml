@@ -40,6 +40,5 @@ jobs:
         run: |
           sam deploy \
             --stack-name aialpha-sentiment-glennbech \
-            --parameter-overrides CandidateNumber=glennbech \
             --no-confirm-changeset \
             --no-fail-on-empty-changeset
