@@ -1,0 +1,16 @@
+# Build artifacts
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local

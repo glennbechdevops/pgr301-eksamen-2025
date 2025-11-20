@@ -1,0 +1,18 @@
+
+# Canditate Number
+bucket_name = "kandidat-26-data"
+
+# AWS region (default: eu-west-1)
+aws_region = "eu-west-1"
+
+# Prefix for temporary files (default: midlertidig/)
+temp_prefix = "midlertidig/"
+
+# Number of days before moving to Glacier storage (default: 30)
+days_to_glacier = 30
+
+# Number of days before deleting files (default: 90)
+days_to_expiration = 90
+
+# Number of days before deleting old versions (default: 30)
+noncurrent_version_expiration_days = 30

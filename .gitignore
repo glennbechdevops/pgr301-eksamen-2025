@@ -1,0 +1,15 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate*
+terraform.tfvars
+
+# SAM
+.aws-sam/
+samconfig.toml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/

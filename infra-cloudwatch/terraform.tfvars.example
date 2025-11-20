@@ -1,0 +1,30 @@
+# Example configuration for CloudWatch infrastructure
+# Copy this to terraform.tfvars and update with your values
+
+# AWS region (default: eu-west-1)
+aws_region = "eu-west-1"
+
+# CloudWatch namespace (MUST match MetricsConfig.java)
+cloudwatch_namespace = "kandidat26"
+
+# Dashboard name
+dashboard_name = "kandidat-26-sentiment-dashboard"
+
+# SNS topic name
+sns_topic_name = "kandidat-26-sentiment-alarms"
+
+# REQUIRED: Your email address for alarm notifications
+alarm_email = "your-email@example.com"
+
+# Alarm configuration
+alarm_prefix = "kandidat-26"
+alarm_period = 300
+alarm_evaluation_periods = 2
+
+# High duration threshold (milliseconds)
+# Triggers if average analysis time exceeds this value
+high_duration_threshold = 5000
+
+# Low confidence alarm (optional)
+enable_confidence_alarm = true
+low_confidence_threshold = 50
